@@ -1,0 +1,236 @@
+
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("Quick Hub - Murder Mystery 2", "Midnight")
+
+        
+        local Tab = Window:NewTab("Credits")
+        local Section = Tab:NewSection("Credits")
+        local Section = Tab:NewSection("Made by: RealLeon#0005")
+        local Section = Tab:NewSection("Helper: NezyGhoul#8130")
+
+        
+        
+        
+        local Tab = Window:NewTab("Main")
+        local Section = Tab:NewSection("Main")
+        local Section = Tab:NewSection("https://discord.gg/jywSmuYsHH")
+
+        
+        Section:NewKeybind("Toggle Ui", "Please Change the F to E or its not working!", Enum.KeyCode.F, function()
+            Library:ToggleUI()
+        end)
+        
+
+        
+        
+        local Tab = Window:NewTab("Local Player")
+        local Section = Tab:NewSection("Local Player")
+        
+        Section:NewToggle("Esp", "Esp Player (Working)", function(state)
+            if state then
+                print("Toggle On")
+                loadstring(game:HttpGet(('https://pastebin.com/raw/ypSsQRK6'),true))()
+            else
+                print("Toggle Off")
+                loadstring(game:HttpGet(('https://pastebin.com/raw/ypSsQRK6'),false))()
+            end
+        end)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        Section:NewButton("BTools", "BTools (Working)", function()
+            print("Clicked")
+            Player = game.Players.LocalPlayer
+ 
+function Give(x)
+    H = Instance.new("HopperBin", Player.Backpack)
+    H.BinType = x
+end
+ 
+for i = 2, 4 do
+Give(i)
+end
+end)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        Section:NewToggle("God Mode", "God Mode (Working)", function(state)
+            if state then
+                print("Toggle On")
+                game.Players.LocalPlayer.Character.Humanoid:Remove()
+Instance.new('Humanoid', game.Players.LocalPlayer.Character)
+
+            else
+                print("Toggle Off")
+                game.Players.LocalPlayer.Character.Humanoid:Normal()
+Instance.new('Humanoid', game.Players.LocalPlayer.Character)
+
+            end
+        end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        Section:NewToggle("Noclip", "Noclip (Working)", function(state)
+            if state then
+                print("Toggle On")
+                noclip = true
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+            else
+                print("Toggle Off")
+                noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+            end
+        end)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        Section:NewToggle("Inf Jump", "Inf Jump (Working)", function(state)
+            if state then
+                print("Toggle On")
+                _G.infinjump = true
+ 
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+Mouse.KeyDown:connect(function(k)
+if _G.infinjump then
+if k:byte() == 32 then
+Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+Humanoid:ChangeState("Jumping")
+wait(0.1)
+Humanoid:ChangeState("Seated")
+end
+end
+end)
+            else
+                print("Toggle Off")
+                _G.infinjump = false
+ 
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+Mouse.KeyDown:connect(function(k)
+if _G.infinjump then
+if k:byte() == 32 then
+Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+Humanoid:ChangeState("Jumping")
+wait(0.1)
+Humanoid:ChangeState("Seated")
+end
+end
+end)
+            end
+        end)
+
+
+
+
+
+        local Player = Window:NewTab("Player")
+        local PlayerSection = Player:NewSection("Player")
+         PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+        end)
+     
+        PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+        end)
+    
+    
+    
+    
+        local Tab = Window:NewTab("Teleports")
+        local Section = Tab:NewSection("Teleports")
+        Section:NewButton("Lobby", "Lobby Teleport", function()
+            print("Clicked")
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-108.25495147705, 138.3260345459, 41.639129638672)
+        end)
+        Section:NewButton("Waiting Room", "Waiting Room Teleport", function()
+            print("Clicked")
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-108.14199829102, 140.67608642578, 83.178932189941)
+        end)
+        Section:NewButton("Map", "Map Teleport", function()
+            print("Clicked")
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(413.26495361328, 46.076118469238, 36.120166778564)
+        end)
+    end
